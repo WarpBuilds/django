@@ -41,7 +41,7 @@ jobs:
   #       run: python tests/runtests.py -v2
 
   pypy-sqlite:
-    runs-on: warp-ubuntu-latest-x64-2x
+    runs-on: warp-ubuntu-latest-x64-4x
     name: Ubuntu, SQLite, PyPy3.10
     continue-on-error: true
     steps:
@@ -62,7 +62,7 @@ jobs:
         run: python -Wall tests/runtests.py --verbosity=2
 
   pypy-postgresql:
-    runs-on: warp-ubuntu-latest-x64-2x
+    runs-on: warp-ubuntu-latest-x64-4x
     name: Ubuntu, PostgreSQL, PyPy3.10
     continue-on-error: true
     services:
@@ -99,7 +99,7 @@ jobs:
         run: python -Wall tests/runtests.py --settings=test_postgres --verbosity=2
 
   javascript-tests:
-    runs-on: warp-ubuntu-latest-x64-2x
+    runs-on: warp-ubuntu-latest-x64-4x
     name: JavaScript tests
     steps:
       - name: Checkout
@@ -114,7 +114,7 @@ jobs:
       - run: npm test
 
   selenium-sqlite:
-    runs-on: warp-ubuntu-latest-x64-2x
+    runs-on: warp-ubuntu-latest-x64-4x
     name: Selenium tests, SQLite
     steps:
       - name: Checkout
@@ -136,7 +136,7 @@ jobs:
           python -Wall runtests.py --verbosity 2 --noinput --selenium=chrome --headless --settings=test_sqlite --parallel 2
 
   selenium-postgresql:
-    runs-on: warp-ubuntu-latest-x64-2x
+    runs-on: warp-ubuntu-latest-x64-4x
     name: Selenium tests, PostgreSQL
     services:
       postgres:
